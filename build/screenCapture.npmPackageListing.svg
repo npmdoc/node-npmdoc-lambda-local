@@ -1,0 +1,31 @@
+<svg height="446" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="446" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-21 08:29:42 +0000    34724 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-21 08:29:42 +0000     1429 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-21 08:29:42 +0000      101 bytes  Makefile</tspan>
+<tspan x="10" y="74">  3.  2017-04-21 08:29:42 +0000     4417 bytes  README.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-21 08:29:42 +0000     2671 bytes  REQUIRE_SAMPLES.md</tspan>
+<tspan x="10" y="106">  5.  2017-04-21 08:29:42 +0000     4041 bytes  bin/lambda-local</tspan>
+<tspan x="10" y="122">  6.  2017-04-21 08:29:42 +0000       40 bytes  env.json</tspan>
+<tspan x="10" y="138">  7.  2017-04-21 08:29:42 +0000      263 bytes  env_lambda.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-21 08:29:42 +0000       82 bytes  event-samples/custom.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-21 08:29:42 +0000     2106 bytes  event-samples/dynamodb-update.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-21 08:29:42 +0000      699 bytes  event-samples/kinesis.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-21 08:29:42 +0000     1001 bytes  event-samples/s3-put.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-21 08:29:42 +0000        3 bytes  event.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-21 08:29:42 +0000       82 bytes  examples/custom.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-21 08:29:42 +0000      322 bytes  examples/index.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-21 08:29:42 +0000      153 bytes  index.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-21 08:29:42 +0000     3133 bytes  lib/context.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-21 08:29:42 +0000     3353 bytes  lib/lambdalocal.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-21 08:29:42 +0000     2493 bytes  lib/utils.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-21 08:29:42 +0000      849 bytes  package.json</tspan>
+<tspan x="10" y="346"> 20.  2017-04-21 08:29:42 +0000       43 bytes  test/events/test-event.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-21 08:29:42 +0000      244 bytes  test/functs/test-func-awsprofile.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-21 08:29:42 +0000      203 bytes  test/functs/test-func-mocking.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-21 08:29:42 +0000      190 bytes  test/functs/test-func.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-21 08:29:42 +0000      247 bytes  test/other/debug.aws</tspan>
+<tspan x="10" y="426"> 25.  2017-04-21 08:29:42 +0000     6559 bytes  test/test.js</tspan>
+</text>
+</svg>

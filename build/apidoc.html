@@ -1,0 +1,873 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >lambda-local (v1.4.2)</a>
+</h1>
+<h4>Commandline tool to run Lambda functions on your local machine.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lambda-local">module lambda-local</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context">
+            function <span class="apidocSignatureSpan">lambda-local.</span>context
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.execute">
+            function <span class="apidocSignatureSpan">lambda-local.</span>execute
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.getLogger">
+            function <span class="apidocSignatureSpan">lambda-local.</span>getLogger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.setLogger">
+            function <span class="apidocSignatureSpan">lambda-local.</span>setLogger
+            <span class="apidocSignatureSpan">(_logger)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.</span>env_lambda</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.</span>lambdalocal</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lambda-local.context">module lambda-local.context</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">lambda-local.context.</span>callbackWaitsForEmptyEventLoop</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.context">
+            function <span class="apidocSignatureSpan">lambda-local.</span>context
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context._initialize">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>_initialize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.callback">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>callback
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.done">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>done
+            <span class="apidocSignatureSpan">(err, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.fail">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>fail
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.getRemainingTimeInMillis">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>getRemainingTimeInMillis
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.context.succeed">
+            function <span class="apidocSignatureSpan">lambda-local.context.</span>succeed
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">lambda-local.context.</span>memoryLimitInMB</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.context.</span>clientContext</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.context.</span>identity</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.context.</span>logStreamName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>awsRequestId</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>createInvokeId</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>functionName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>functionVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>invokedFunctionArn</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lambda-local.context.</span>logGroupName</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lambda-local.env_lambda">module lambda-local.env_lambda</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.env_lambda.handler">
+            function <span class="apidocSignatureSpan">lambda-local.env_lambda.</span>handler
+            <span class="apidocSignatureSpan">(event, context, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lambda-local.lambdalocal">module lambda-local.lambdalocal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.lambdalocal.context">
+            function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>context
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.lambdalocal.execute">
+            function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>execute
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.lambdalocal.getLogger">
+            function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>getLogger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.lambdalocal.setLogger">
+            function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>setLogger
+            <span class="apidocSignatureSpan">(_logger)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lambda-local.utils">module lambda-local.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.utils.generateRandomHex">
+            function <span class="apidocSignatureSpan">lambda-local.utils.</span>generateRandomHex
+            <span class="apidocSignatureSpan">(length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.utils.getAbsolutePath">
+            function <span class="apidocSignatureSpan">lambda-local.utils.</span>getAbsolutePath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.utils.loadAWSCredentials">
+            function <span class="apidocSignatureSpan">lambda-local.utils.</span>loadAWSCredentials
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lambda-local.utils.outputJSON">
+            function <span class="apidocSignatureSpan">lambda-local.utils.</span>outputJSON
+            <span class="apidocSignatureSpan">(json, logger)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lambda-local.utils.</span>hexChars</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lambda-local" id="apidoc.module.lambda-local">module lambda-local</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context" id="apidoc.element.lambda-local.context">
+        function <span class="apidocSignatureSpan">lambda-local.</span>context
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.execute" id="apidoc.element.lambda-local.execute">
+        function <span class="apidocSignatureSpan">lambda-local.</span>execute
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (opts) {
+    if (opts.callback) {
+        _executeSync.apply(this, [opts]);
+    } else {
+        var that = this;
+        return new Promise(function (resolve, reject) {
+            opts.callback = function (_err, _done) {
+                if (_err) {
+                    reject(_err);
+                }
+                resolve(_done);
+            };
+            _executeSync.apply(that, [opts]);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.getLogger" id="apidoc.element.lambda-local.getLogger">
+        function <span class="apidocSignatureSpan">lambda-local.</span>getLogger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLogger = function () {
+    return logger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.setLogger" id="apidoc.element.lambda-local.setLogger">
+        function <span class="apidocSignatureSpan">lambda-local.</span>setLogger
+        <span class="apidocSignatureSpan">(_logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLogger = function (_logger){
+    if(_logger != null &#x26;&#x26; typeof _logger.loggers != &#x27;undefined&#x27;){
+        logger = _logger;
+    } else {
+        console.warn(&#x22;Invalid logger object ! Using default logger&#x22;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lambda-local.context" id="apidoc.module.lambda-local.context">module lambda-local.context</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.context" id="apidoc.element.lambda-local.context.context">
+        function <span class="apidocSignatureSpan">lambda-local.</span>context
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context._initialize" id="apidoc.element.lambda-local.context._initialize">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>_initialize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_initialize = function (options) {
+<span class="apidocCodeCommentSpan">    /* set time */
+</span>    startTime = new Date().getTime();
+    timeout = options.timeoutMs;
+
+    logger = options.logger;
+	unmute = options.unmute;
+
+    /* set function name */
+    Context.functionName = options.functionName;
+
+    /* set requestid */
+    Context.awsRequestId = options.awsRequestId;
+
+    /* Set callbackWaitsForEmptyEventLoop */
+    Context.callbackWaitsForEmptyEventLoop = options.callbackWaitsForEmptyEventLoop;
+    return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (profilePath) {
+    utils.loadAWSCredentials(profilePath, profileName);
+}
+
+// load event &#x26; context
+var context = this.context;
+
+context.<span class="apidocCodeKeywordSpan">_initialize</span>({
+    functionName: lambdaHandler,
+    awsRequestId: context.createInvokeId,
+    timeoutMs: timeoutMs,
+    callbackWaitsForEmptyEventLoop: callbackWaitsForEmptyEventLoop,
+    unmute: unmute,
+    logger: logger
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.callback" id="apidoc.element.lambda-local.context.callback">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>callback
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">callback = function (result) {
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.done" id="apidoc.element.lambda-local.context.done">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>done
+        <span class="apidocSignatureSpan">(err, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function (err, message) {
+	if(unmute != null) {unmute(); unmute = null;}
+    if (!Context.callbackWaitsForEmptyEventLoop) {
+        Context.callback(err, message);
+    }
+    logger.log(&#x27;info&#x27;, &#x27;END&#x27;);
+    if (err !== null) {
+        logger.log(&#x27;error&#x27;, &#x27;Error&#x27;);
+        logger.log(&#x27;error&#x27;, &#x27;------&#x27;);
+        utils.outputJSON(err, logger);
+    } else {
+        logger.log(&#x27;info&#x27;, &#x27;Message&#x27;);
+        logger.log(&#x27;info&#x27;, &#x27;------&#x27;);
+        utils.outputJSON(message, logger);
+    }
+    if (Context.callbackWaitsForEmptyEventLoop) {
+        Context.callback(err, message);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.fail" id="apidoc.element.lambda-local.context.fail">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>fail
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail = function (err) {
+	if(unmute != null) {unmute(); unmute = null;}
+    logger.log(&#x27;error&#x27;, &#x27;FAILING!!&#x27;);
+    Context.done(err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.getRemainingTimeInMillis" id="apidoc.element.lambda-local.context.getRemainingTimeInMillis">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>getRemainingTimeInMillis
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRemainingTimeInMillis = function () {
+    var now = new Date().getTime();
+    return (timeout + startTime - now);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.context.succeed" id="apidoc.element.lambda-local.context.succeed">
+        function <span class="apidocSignatureSpan">lambda-local.context.</span>succeed
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">succeed = function (message) {
+	if(unmute != null) {unmute(); unmute = null;}
+    Context.done(null, message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lambda-local.env_lambda" id="apidoc.module.lambda-local.env_lambda">module lambda-local.env_lambda</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.env_lambda.handler" id="apidoc.element.lambda-local.env_lambda.handler">
+        function <span class="apidocSignatureSpan">lambda-local.env_lambda.</span>handler
+        <span class="apidocSignatureSpan">(event, context, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler = function (event, context, callback) {
+	console.log(&#x22;HELLO! 1&#x22;);
+	console.log(&#x22;env hoge1:&#x22;+process.env[&#x22;hoge1&#x22;]);
+	callback(null, &#x22;env hoge2:&#x22;+process.env[&#x22;hoge2&#x22;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lambda-local.lambdalocal" id="apidoc.module.lambda-local.lambdalocal">module lambda-local.lambdalocal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.lambdalocal.context" id="apidoc.element.lambda-local.lambdalocal.context">
+        function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>context
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.lambdalocal.execute" id="apidoc.element.lambda-local.lambdalocal.execute">
+        function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>execute
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (opts) {
+    if (opts.callback) {
+        _executeSync.apply(this, [opts]);
+    } else {
+        var that = this;
+        return new Promise(function (resolve, reject) {
+            opts.callback = function (_err, _done) {
+                if (_err) {
+                    reject(_err);
+                }
+                resolve(_done);
+            };
+            _executeSync.apply(that, [opts]);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.lambdalocal.getLogger" id="apidoc.element.lambda-local.lambdalocal.getLogger">
+        function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>getLogger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLogger = function () {
+    return logger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.lambdalocal.setLogger" id="apidoc.element.lambda-local.lambdalocal.setLogger">
+        function <span class="apidocSignatureSpan">lambda-local.lambdalocal.</span>setLogger
+        <span class="apidocSignatureSpan">(_logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLogger = function (_logger){
+    if(_logger != null &#x26;&#x26; typeof _logger.loggers != &#x27;undefined&#x27;){
+        logger = _logger;
+    } else {
+        console.warn(&#x22;Invalid logger object ! Using default logger&#x22;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lambda-local.utils" id="apidoc.module.lambda-local.utils">module lambda-local.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.utils.generateRandomHex" id="apidoc.element.lambda-local.utils.generateRandomHex">
+        function <span class="apidocSignatureSpan">lambda-local.utils.</span>generateRandomHex
+        <span class="apidocSignatureSpan">(length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateRandomHex = function (length) {
+    var hexVal = &#x27;&#x27;;
+    for (var i = 0; i &#x3c; length; i++) {
+        hexVal += _hexChars[Math.floor(Math.random() * _hexChars.length)];
+    }
+    return hexVal;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.utils.getAbsolutePath" id="apidoc.element.lambda-local.utils.getAbsolutePath">
+        function <span class="apidocSignatureSpan">lambda-local.utils.</span>getAbsolutePath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAbsolutePath = function (path) {
+    var res = null,
+        homeDir = process.env.HOME || process.env.USERPROFILE;
+		
+	var windowsRegex = /([A-Z|a-z]:\\[^*|&#x22;&#x3c;&#x3e;?\n]*)|(\\\\.*?\\.*)/;
+		
+    if (path.match(/^\//) || path.match(windowsRegex)) {
+		//On Windows and linux
+        res = path;
+    } else {
+        if (path === &#x27;~&#x27;) {
+			//On linux only
+            res = homeDir;
+        } else if (path.slice(0, 2) !== &#x27;~/&#x27;) {
+			//On Windows and linux
+            res = join(process.cwd(), path);
+        } else {
+			//On linux only
+            res = join(homeDir, path.slice(2));
+        }
+    }
+    return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    unmute: unmute,
+    logger: logger
+});
+
+// set environment variables before the require
+process.env[&#x27;AWS_REGION&#x27;] = region;
+process.env[&#x27;LAMBDA_TASK_ROOT&#x27;] = process.cwd();
+process.env[&#x27;NODE_PATH&#x27;] = utils.<span class="apidocCodeKeywordSpan">getAbsolutePath</span>(&#x27;node_modules&#x27;);
+process.env[&#x27;LAMBDA_CONSOLE_SOCKET&#x27;] = 14;
+process.env[&#x27;LAMBDA_CONTROL_SOCKET&#x27;] = 11;
+process.env[&#x27;AWS_SESSION_TOKEN&#x27;] = context.awsRequestId; /*Just a random value...*/
+
+// custom environment variables
+if (environment != null) {
+  Object.keys(environment).forEach(function(key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.utils.loadAWSCredentials" id="apidoc.element.lambda-local.utils.loadAWSCredentials">
+        function <span class="apidocSignatureSpan">lambda-local.utils.</span>loadAWSCredentials
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadAWSCredentials = function (path) {
+    //default parameter
+    var profileName = arguments.length &#x3c;= 1 ||
+        arguments[1] === undefined ||
+        arguments[1] === null ? &#x27;default&#x27; : arguments[1];
+
+    var fs = require(&#x27;fs&#x27;),
+        dataRaw = fs.readFileSync(_getAbsolutePath(path)),
+        data = dataRaw.toString();
+
+    var regex = new RegExp(&#x27;\\[&#x27; + profileName +
+        &#x27;\\](.|\\n|\\r\\n)*?aws_secret_access_key( ?)+=( ?)+(.*)&#x27;),
+        match;
+    if ((match = regex.exec(data)) !== null) {
+        process.env[&#x27;AWS_SECRET_ACCESS_KEY&#x27;] = match[4];
+    } else {
+        console.log(&#x27;WARNING: Couldn\&#x27;t find the \&#x27;aws_secret_access_key\&#x27; field inside the file.&#x27;);
+    }
+
+    regex = new RegExp(&#x27;\\[&#x27; + profileName + &#x27;\\](.|\\n|\\r\\n)*?aws_access_key_id( ?)+=( ?)+(.*)&#x27;);
+    if ((match = regex.exec(data)) !== null) {
+        process.env[&#x27;AWS_ACCESS_KEY_ID&#x27;] = match[4];
+    } else {
+        console.log(&#x27;WARNING: Couldn\&#x27;t find the \&#x27;aws_access_key_id\&#x27; field inside the file.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if(muteLogs) {
+    unmute = mute();
+}
+
+//load profile
+if (profilePath) {
+    utils.<span class="apidocCodeKeywordSpan">loadAWSCredentials</span>(profilePath, profileName);
+}
+
+// load event &#x26; context
+var context = this.context;
+
+context._initialize({
+    functionName: lambdaHandler,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lambda-local.utils.outputJSON" id="apidoc.element.lambda-local.utils.outputJSON">
+        function <span class="apidocSignatureSpan">lambda-local.utils.</span>outputJSON
+        <span class="apidocSignatureSpan">(json, logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">outputJSON = function (json, logger) {
+    logger.log(&#x27;info&#x27;, typeof json === &#x27;object&#x27; ?
+        JSON.stringify(json, null, &#x27;\t&#x27;) : json);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
